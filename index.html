@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Administrativo</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      height: 100%;
+    }
+
+    .menu-lateral {
+      width: 250px;
+      background-color: #1a1a1a;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .menu-lateral h2 {
+      color: blue;
+      margin-bottom: 20px;
+    }
+
+    .menu-lateral nav a {
+      display: block;
+      color: white;
+      margin: 10px 0;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .menu-lateral nav a:hover {
+      background-color: blue;
+      color: black;
+    }
+
+    .btn-sair {
+      background-color: blue;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-sair:hover {
+      background-color: blue;
+    }
+
+    .conteudo {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .conteudo h1 {
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-left: 4px solid blue;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 8px rgb(76, 0, 255);
+      box-sizing: border-box;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .botao-vermelho {
+      display: inline-block;
+      background-color: blue;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .botao-vermelho:hover {
+      background-color: blue;
+      color: black;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .menu-lateral {
+        width: 100%;
+        padding: 15px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-lateral h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .menu-lateral nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .menu-lateral nav a {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .conteudo {
+        padding: 20px;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="menu-lateral">
+      <h2>FJU Vôlei</h2>
+      <nav>
+        <a href="VOLEII.HTML">Cadastro de Atleta</a>
+        <a href="atletass.html">Atletas Cadastrados</a>
+        <a href="CADASTROTIME.HTML">Cadastro de Times</a>
+        <a href="times.html">Times Cadastrados</a>
+      </nav>
+    </aside>
+
+    <main class="conteudo">
+      <h1>Bem-vindo ao Painel</h1>
+      <div class="cards">
+        <div class="card">
+          <h3>Cadastro de Atleta</h3>
+          <p>Adicione um novo aluno ao sistema</p>
+          <a href="VOLEII.HTML" class="botao-vermelho">Ir</a>
+        </div>
+
+        <div class="card">
+          <h3>Atletas Cadastrados</h3>
+          <p>Visualize e edite os atletas</p>
+          <a href="atletass.html" class="botao-vermelho">Ir</a>
+        </div>
+
+        <div class="card">
+          <h3>Cadastro de Time</h3>
+          <p>Adicione um novo Time</p>
+          <a href="CADASTROTIME.HTML" class="botao-vermelho">Ir</a>
+        </div>
+
+        <div class="card">
+          <h3>Times Cadastrados</h3>
+          <p>Adicione um novo aluno ao sistema</p>
+          <a href="times.html" class="botao-vermelho">Ir</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./firebase.js"></script>
+</body>
+</html>
